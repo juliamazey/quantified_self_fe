@@ -29,14 +29,14 @@ class App extends React.Component {
       headers: { 'Content-Type': 'application/json' },
       method: 'POST',
       body: JSON.stringify({
-        email: 'user1@gmail.com',
+        email: 'no@gmail.com',
         password: 'password'
       })
     })
     .then(response => response.json())
     .then(response => document.cookie = `apiKey=${response.apiKey}`)
     .then(response => console.log('success:', response))
-    .catch(error => console.error('Error:', error));
+    .catch(error => alert('Invalid username or password'));
   }
 
   render() {
